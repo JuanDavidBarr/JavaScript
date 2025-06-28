@@ -9,8 +9,8 @@ const errorMessage = document.createElement("span");
 myForm.elements["password"].addEventListener("click", ()=>{
     if (errorMessage){
         errorMessage.remove();
-        myForm.elements["password"].style.borderColor = "black";
-        myForm.elements["passwordConfirmation"].style.borderColor = "black";
+        myForm.elements["password"].style.borderColor = "gray";
+        myForm.elements["passwordConfirmation"].style.borderColor = "gray";
     }
 })
 //Capture the information on the input field
@@ -34,11 +34,33 @@ myForm.addEventListener("submit", (event)=>{
         return;
     }
     //loop over the array of inputs
+    const user = {};
     for (const element of myInput) {
-        //validate whether there input element has the name property, so we can rule out the button
+        //validate whether the input element has the name property, so we can rule out the button
         if(element.name){
-            //set the elements of the element in the local storage
-            localStorage.setItem(element.name, element.value);
+            //exclude the password confirmation value
+            if(element.name == "passwordConfirmation"){
+                break;
+            } else {
+                //add the pairs to the object user
+                user[element.name] = element.value;
+                console.log(user);
+            }           
+        }
+    }
+    //saving user object in localstorage
+    localStorage.setItem("Profile", user);
+    //styling account creation confirmation
+    errorMessage.style.color = "green";
+    errorMessage.style.fontSize = "x-small";
+    errorMessage.style.display = "flex";
+    errorMessage.innerHTML = "Account created";
+    //add span with confirmation message below confirmpassowrd field
+    myInputConfirmPasswordContainer.appendChild(errorMessage);
+    //remove text from input fields after submitting information
+    for (const element of myForm.elements) {
+        if(element.name){
+            element.value = "";      
         }
     }
 })
@@ -58,4 +80,6 @@ myForm.addEventListener("submit", (event)=>{
 
 
 
-//myButton.addEventListener("submit",);
+//set the elements of the element in the local storage
+// localStorage.setItem(element.name, element.value);
+
