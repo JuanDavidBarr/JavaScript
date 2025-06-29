@@ -67,20 +67,3 @@ myForm.addEventListener("submit", (event)=>{
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//set the elements of the element in the local storage
-// localStorage.setItem(element.name, element.value);
-
