@@ -35,16 +35,19 @@
             <form id="myForm">
                 <h1 class="mb-5 text-primary">Log in</h1>
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  <label for="InputUsername" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="InputUsername" name="userName">
                 </div>
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <label for="InputEmail" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="InputEmail" name="email">
                 </div>
-                <button type="submit" class="mb-3 btn btn-primary">Submit</button>
-                <div>
+                <div class="mb-3">
+                  <label for="InputPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="InputPassword" name="password">
+                </div>
+                <button id="myButton" type="submit" class="mb-3 btn btn-primary">Submit</button>
+                <div id="lastContainer">
                   <p><a href="./register.html">I don't have an account</a></p>
                 </div>
               </form>

@@ -49,7 +49,8 @@ myForm.addEventListener("submit", (event)=>{
         }
     }
     //saving user object in localstorage
-    localStorage.setItem("Profile", user);
+    //using JSON stringigy method to serialize the object
+    localStorage.setItem("Profile", JSON.stringify(user));
     //styling account creation confirmation
     errorMessage.style.color = "green";
     errorMessage.style.fontSize = "x-small";
