@@ -9,8 +9,8 @@ const errorMessage = document.createElement("span");
 myForm.elements["password"].addEventListener("click", ()=>{
     if (errorMessage){
         errorMessage.remove();
-        myForm.elements["password"].style.borderColor = "gray";
-        myForm.elements["passwordConfirmation"].style.borderColor = "gray";
+        myForm.elements["password"].style.borderColor = "";
+        myForm.elements["passwordConfirmation"].style.borderColor = "";
     }
 })
 //Capture the information on the input field
@@ -50,7 +50,7 @@ myForm.addEventListener("submit", (event)=>{
     }
     //saving user object in localstorage
     //using JSON stringigy method to serialize the object
-    localStorage.setItem("Profile", JSON.stringify(user));
+    localStorage.setItem(user["userName"], JSON.stringify(user));
     //styling account creation confirmation
     errorMessage.style.color = "green";
     errorMessage.style.fontSize = "x-small";
