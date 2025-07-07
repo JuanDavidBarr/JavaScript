@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-two-fifths">
+                    <div class="field">
+                        <label class="label" for="name" >Name</label>
+                        <div class="control">
+                            <input class="input input-name" type="text" id="name">
+                        </div>
+                        
+                    </div>
+                        <div class="field">
+                            <label class="label" for="age">Age</label>
+                            <div class="control">
+                                <input class="input input-age" type="text" id="age">
+                            </div>
+                        </div>
+                    <div class="field is-grouped">
+                        <p class="control">
+                            <button class="button is-link save-btn">Save changes</button>
+                        </p>
+                        <p class="control">
+                            <button class="button is-danger clear-btn">Clear data</button>
+                        </p>
+                    </div>
+                    <p class="help is-danger result">Couldn't save the information</p>
+                    <p class="help has-text-success result">Information saved!</p>
+                    <p class="help is-warning result">Information deleted</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<script src="../assets/javascript/main.js"></script>
+</body>
+</html>
