@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="https://kit.fontawesome.com/dc33c0c841.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar mx-0 has-shadow has-background-link header__navbar">
+            <!--logo-->
+            <div class="navbar-brand">
+                <img class="logo" src="../assets/images/event-master-high-resolution-logo.png" alt="">
+                <a class="navbar-burger has-text-white navbar__burguer" role="button">
+                    <span>Inicio</span>
+                    <span>Acerca de</span>
+                    <span>Eventos</span>
+                    <span>Contacto</span>
+                    <span>Login</span>
+                </a>
+            </div>
+            <!--Menu options-->
+            <div class="navbar-menu has-background-link">
+                <div class="navbar-end">
+                    <a href="#section1" class="navbar-item has-text-white navbar__anchor">Inicio</a>
+                    <a href="#section2" class="navbar-item has-text-white navbar__anchor">Acerca de</a>
+                    <a href="" class="navbar-item has-text-white navbar__anchor">Eventos</a>
+                    <a href="" class="navbar-item has-text-white navbar__anchor">Contacto</a>
+                    <a href="" class="navbar-item has-text-white px-5 navbar__anchor">Login</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!--Images slider-->
+        <section class="main__section" id="section1">
+            <div class="section__slider">
+                <a class="button is-size-1 slider__button slider__button--left" data-slider-button = "previous" href=""><i class="fa-solid fa-arrow-right"></i></a>
+                <a class="button is-size-1 slider__button slider__button--right" data-slider-button = "next" href=""><i class="fa-solid fa-arrow-left"></i></a>
+                <ul class="slider__list">
+                    <li class="slider__slide" data-active>
+                        <img class="slide__image" src="../assets/images/evento-1.gif"></img>
+                    </li>
+                    <li class="slider__slide" >
+                        <img class="slide__image" src="../assets/images/evento-2.gif"></img>
+                    </li>
+                    <li class="slider__slide" >
+                        <img class="slide__image" src="../assets/images/evento-3.gif"></img>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--About us-->
+        <section class="section main__section--aboutUs" id="section2">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class="column image">
+                        <img src="../assets/images/logo-page.png" alt="Logo">
+                    </div>
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 has-text-white">
+                            Acerca de nosotros
+                        </h1>
+                        <p class="has-text-white">
+                            En event master somos un puente entre nuestros clientes y las más grandes experiencias que se llevan a cabo en la ciudad de Medellín.
+                            Hacemos presencia en los eventos del momento: conciertos, festivales, carnavales y mucho más. No dejes que te lo cuenten, haz parte
+                            de las experiencias más inolvidables.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Events-->
+        <section class="section main__section--events" id="section3">
+            <div class="container">
+                <div class="columns is-multiline">
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="../assets/images/evento-1.gif"
+                                        alt="Concierto BadBunny"
+                                    />
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-4">Debí tirar más fotos - World Tour</p>
+                                        <p class="subtitle is-6 mb-0">Estadio Atanasio Girardot, Medellín</p>
+                                        <p class="subtitle is-6 has-text-weight-bold">Enero 23, 24 y 25, 2026</p>
+                                        <a href="#"><p class="title is-4 has-text-link">Ver más</p></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+<script src="../assets/javascript/scripts.js"></script>
+</body>
+</html>

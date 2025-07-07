@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+:root{
+    --font: "Noto Sans", sans-serif;
+}
+.header__navbar{
+    font-family: var(--font);
+}
+.logo{
+    width: 8rem;
+}
+.navbar__anchor:hover{
+    background-color: #27187e;
+    color: white;
+}
+.navbar__burguer:hover{
+    background-color: #27187e;
+    color: white;
+}
+.section__slider{
+    position: relative;
+    width: 100vw;
+    height: 35rem;
+}
+.slider__slide{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+}
+.slider__slide[data-active]{
+    opacity: 1;
+}
+.slide__image{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+}
+.slider__button{
+    position: absolute;
+    z-index: 2;
+    background: none;
+    top: 38%;
+    border: none;
+    cursor: pointer;
+}
+.slider__button:hover{
+    background-color: rgba(0, 0, 0, .2);
+}
+.slider__button:focus{
+    color: white;
+}
+.slider__button--right{
+    left: 1rem;
+}
+.slider__button--left{
+    right: 1rem;
+}
+.main__section--aboutUs{
+    background-color: #5771FF;
+    font-family: var(--font);
+}
+
+
+
+    
