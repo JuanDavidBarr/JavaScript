@@ -1,0 +1,25 @@
+{
+  "Cards": [
+    {
+      "src": "../assets/images/evento-1.gif",
+      "alt": "Concierto BadBunny",
+      "title": "Debí tirar más fotos - World Tour",
+      "location": "Estadio Atanasio Girardot, Medellín",
+      "date": "Enero 23, 24 y 25, 2026"
+    },
+    {
+      "src": "../assets/images/evento-3.gif",
+      "alt": "Concierto Guns n' Roses",
+      "title": "Because what you want...",
+      "location": "Estadio Atanasio Girardot, Medellín",
+      "date": "Sabado, 11 de octubre"
+    },
+    {
+      "src": "../assets/images/evento-2.gif",
+      "alt": "Concierto My Chemical Romance",
+      "title": "South America 2026",
+      "location": "Vive Claro, Bogotá",
+      "date": "Enero 22, 2026"
+    }
+  ]
+}
