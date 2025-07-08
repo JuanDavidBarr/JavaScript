@@ -5,8 +5,14 @@ const clearBtn = document.querySelector(".clear-btn");
 const showBtn = document.querySelector(".show-btn");
 const messages = document.querySelectorAll(".result");
 const table = document.querySelector(".table");
+//Initializes interaction counter
+if(!sessionStorage.getItem("interactionCounter")){
+    sessionStorage.setItem("interacionCounter", 0);
+}
 //Stores input values in the local storage
 saveBtn.addEventListener("click", ()=> {
+    //Interaction counter
+    interactions();
     const name = contentInputName.value;
     const age = contentInputAge.value;
     const empty = isEmpty(name, age);
@@ -43,6 +49,8 @@ saveBtn.addEventListener("click", ()=> {
 })
 //Clears data from local storage
 clearBtn.addEventListener("click", ()=> {
+    //Interaction counter
+    interactions();
     //Removes messages (success, error, warning) if any
     messages.forEach(message => {
         message.classList.add("is-hidden");
@@ -57,6 +65,8 @@ clearBtn.addEventListener("click", ()=> {
 })
 //Shows information in the html
 showBtn.addEventListener("click", ()=>{
+    //Interaction counter
+    interactions();
     //Removes messages (success, error, warning) if any
     messages.forEach(message => {
         message.classList.add("is-hidden");
@@ -103,6 +113,13 @@ function isValid(age){
     } else { 
         return true;
     }
+}
+//Interactions
+function interactions(){
+    let intCounter = JSON.parse(sessionStorage.getItem("interactionCounter"));
+    intCounter++;
+    sessionStorage.setItem("interactionCounter",intCounter);
+    console.log(`Number of interactions so far: ${intCounter}`);
 }
 
 
