@@ -4,6 +4,7 @@ const saveBtn = document.querySelector(".save-btn");
 const clearBtn = document.querySelector(".clear-btn");
 const showBtn = document.querySelector(".show-btn");
 const messages = document.querySelectorAll(".result");
+const table = document.querySelector(".table");
 //Stores input values in the local storage
 saveBtn.addEventListener("click", ()=> {
     const name = contentInputName.value;
@@ -42,7 +43,7 @@ saveBtn.addEventListener("click", ()=> {
 })
 //Clears data from local storage
 clearBtn.addEventListener("click", ()=> {
-    //Remove messages (success, error, warning) if any
+    //Removes messages (success, error, warning) if any
     messages.forEach(message => {
         message.classList.add("is-hidden");
     })
@@ -52,34 +53,40 @@ clearBtn.addEventListener("click", ()=> {
             message.classList.remove("is-hidden");
         }
     })
+
 })
 //Shows information in the html
 showBtn.addEventListener("click", ()=>{
-    const users = {};
-    for (let index = 0; index < localStorage.length; index++) {
-        console.log(localStorage.getItem(localStorage.key(index)));      
+    //Removes messages (success, error, warning) if any
+    messages.forEach(message => {
+        message.classList.add("is-hidden");
+    })
+    //Verifies there is information or no in the localstorage
+    if (localStorage.length === 0){
+        messages.forEach(message =>{
+            if(message.classList.contains("result-information")){
+                message.classList.remove("is-hidden");
+            }
+            return;
+        })
+    } else {
+        const users = [];
+        for (let index = 0; index < localStorage.length; index++) {
+            users.push(JSON.parse(localStorage.getItem(localStorage.key(index))));      
+        }
+        const usersValues = Object.values(users);
+        usersValues.forEach(element => {
+            const newRow = document.createElement("tr");
+            const newCell1 = document.createElement("td");
+            const newCell2 = document.createElement("td");
+            table.appendChild(newRow);
+            newCell1.innerText = element.name;
+            newCell2.innerText = element.age;
+            newRow.appendChild(newCell1);
+            newRow.appendChild(newCell2);      
+        });
     }
-    // const tableSection = document.querySelector(".table-section");
-    // tableSection.innerHTML = `<div class="container">
-    //         <div class="columns is-centered">
-    //             <div class="column is-two-fifths">
-    //                 <table class="table">
-    //                     <thead>
-    //                         <tr>
-    //                             <th></th>
-    //                             <th>Name</th>
-    //                             <th>Age</th>
-    //                         </tr>
-    //                     </thead>
-    //                     <tbody>
-    //                         <th>[id]</th>
-    //                             <td>[nameValue]</td>
-    //                             <td>[ageValue]</td>
-    //                     </tbody>
-    //                 </table>
-    //             </div>
-    //         </div>
-    //     </div>`
+    
 })
 //Makes sure users imput has something
 function isEmpty(name, age){
