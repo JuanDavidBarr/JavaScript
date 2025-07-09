@@ -104,5 +104,5 @@ async function postMessagesContact(){
         console.log("Error when adding message", error);
     }   
 }
-
+//PARA IGNORAR BUG CON LIVESERVER SEGUIR RUTA LIVESERVER/SETTINGS/IGNORE/IGNORE FILES  AGREGAR "**/*.json", EN "liveServer.settings.ignoreFiles"
 
