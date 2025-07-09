@@ -51,7 +51,7 @@
 .slider__button:hover{
     background-color: rgba(0, 0, 0, .2);
 }
-.slider__button:focus{
+.slider__button:focus, .main__section--form{
     color: white;
 }
 .slider__button--right{
@@ -60,7 +60,7 @@
 .slider__button--left{
     right: 1rem;
 }
-.main__section--aboutUs{
+.main__section--aboutUs, .main__section--form{
     background-color: #5771FF;
     font-family: var(--font);
 }
