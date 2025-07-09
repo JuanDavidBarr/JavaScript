@@ -78,18 +78,31 @@ const input = Array.from(document.getElementsByClassName("input"));
 const formButton = document.getElementById("form-button");
 const messagesContact = {};
 //gets information from input fields and store it in an object
-formButton.addEventListener("click", () => {
+formButton.addEventListener("click", (e) => {
+    e.preventDefault();
     input.forEach(element => {
         messagesContact[element.name] = element.value
     });
+    postMessagesContact();
 })
 //sends information to db.json
-async function postMessagesContact (){
+async function postMessagesContact(){
     try{
-        const response = await fetch("http://localhost:3000/Messages", )
-    } catch {
-
-    }
+        const response = await fetch("http://localhost:3000/Messages", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(messagesContact)
+        })
+        if(!response.ok){
+            throw new Error ("Could not fetch resource");
+        }
+        const data = await response.json();
+        console.log("Message added", data)
+    } catch(error) {
+        console.log("Error when adding message", error);
+    }   
 }
 
 
