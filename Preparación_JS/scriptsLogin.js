@@ -20,24 +20,25 @@ async function getUsers(url) {
 loginButton.addEventListener("click", async (e) => {
     e.preventDefault();
     const data = await getUsers(URL_APP);
-    const emailName = loginInputContent[0].value;
-    const password = loginInputContent[1].value;
-    if(emailName.length === 0){
-        const emptyMessage = document.querySelector(".message-empty--user");
-        emptyMessage.classList.remove("is-hidden");
-        return;
-    }else if (password.length === 0){
-        const emptyMessage = document.querySelector(".message-empty--password");
-        emptyMessage.classList.remove("is-hidden");
+    let isEmpty;
+    loginInputContent.forEach(element => {
+        if(element.value.length === 0){
+            const emptyMessage = document.querySelector(`.${element.name}`);
+            emptyMessage.classList.remove("is-hidden");
+            isEmpty = true;
+        }
+    })
+    if(isEmpty){
         return;
     }
+    const emailName = loginInputContent[0].value;
+    const password = loginInputContent[1].value;
     data.forEach(element => {
         if(emailName === element.name || emailName === element.email && password === element.password){
             sessionStorage.setItem("authentication", "true");
             window.location = "./landingPage.html";
         } else {
             console.error("either the password or email/username is incorrect");
-            window.location = "./register.html";
         }
     });
    
