@@ -40,6 +40,7 @@
                               <input class="input" type="password" id="passwordConfirm" name="passwordConfirm">
                             </div>
                             <p class="help is-danger passwordConfirm is-hidden">All fields must be filled</p>
+                            <p class="help is-danger no-match is-hidden">Passwords do not match</p>
                         </div>
                         <div class="field">
                             <p class="control">
@@ -48,6 +49,8 @@
                               </button>
                             </p>
                         </div>
+                        <p class="help is-danger username-unavailable is-hidden">There is already an account with that name</p>
+                        <p class="help is-danger email-unavailable is-hidden">There is already an account with that email</p>
                     </form>
                 </div>
             </div>
