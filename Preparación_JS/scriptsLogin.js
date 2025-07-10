@@ -1,7 +1,6 @@
 const loginInputContent = Array.from(document.getElementsByClassName("input"));
 const URL_APP = "http://localhost:3000/"
 const loginButton = document.getElementById("login-button");
-console.log(loginInputContent);
 //GET METHOD
 async function getUsers(url) {
     try{
@@ -12,8 +11,8 @@ async function getUsers(url) {
         const data = await response.json();
         return data;
     }
-    catch{
-        console.log("Error when getting information");
+    catch(error){
+        console.error("Error when getting information:", error);
     }
 }
 
@@ -23,8 +22,13 @@ loginButton.addEventListener("click", async (e) => {
     const data = await getUsers(URL_APP);
     const emailName = loginInputContent[0].value;
     const password = loginInputContent[1].value;
-    if(emailName.length === 0 || password.length === 0){
-        console.error("All fields must be filled");
+    if(emailName.length === 0){
+        const emptyMessage = document.querySelector(".message-empty--user");
+        emptyMessage.classList.remove("is-hidden");
+        return;
+    }else if (password.length === 0){
+        const emptyMessage = document.querySelector(".message-empty--password");
+        emptyMessage.classList.remove("is-hidden");
         return;
     }
     data.forEach(element => {
@@ -33,7 +37,7 @@ loginButton.addEventListener("click", async (e) => {
             window.location = "./landingPage.html";
         } else {
             console.error("either the password or email/username is incorrect");
-            //window.location = "./register.html";
+            window.location = "./register.html";
         }
     });
    
