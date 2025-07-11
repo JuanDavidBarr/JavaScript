@@ -1,6 +1,7 @@
 const loginInputContent = Array.from(document.getElementsByClassName("input"));
 const URL_APP = "http://localhost:3000/"
 const loginButton = document.getElementById("login-button");
+const createAccButton = document.getElementById("create-account-button");
 //GET METHOD
 async function getUsers(url) {
     try{
@@ -21,6 +22,8 @@ loginButton.addEventListener("click", async (e) => {
     e.preventDefault();
     const data = await getUsers(URL_APP);
     let isEmpty;
+    let noMatch;
+    //VALIDATING INPUTS ARE NOT EMPTY
     loginInputContent.forEach(element => {
         if(element.value.length === 0){
             const emptyMessage = document.querySelector(`.${element.name}`);
@@ -33,14 +36,32 @@ loginButton.addEventListener("click", async (e) => {
     }
     const emailName = loginInputContent[0].value;
     const password = loginInputContent[1].value;
+    //VALIDATING EMAIL/NAME AND PASSWORD
     data.forEach(element => {
         if(emailName === element.name || emailName === element.email && password === element.password){
             sessionStorage.setItem("authentication", "true");
             window.location = "./landingPage.html";
-        } else {
-            console.error("either the password or email/username is incorrect");
+        } else if (!(emailName === element.name)) {
+            const incorrectEmail = document.querySelector(".email-incorrect");
+            incorrectEmail.classList.remove("is-hidden");
+            noMatch = true;
+        } else if (!(emailName === element.email)) {
+            const incorrectName = document.querySelector(".name-incorrect");
+            incorrectName.classList.remove("is-hidden");
+            noMatch = true;
+        } else if (!(password === element.password)) {
+            const incorrectPassword = document.querySelector(".password-incorrect");
+            incorrectPassword.classList.remove("is-hidden");
+            noMatch = true;
         }
     });
-   
+    if (noMatch){
+        return;
+    }
+})
+//GOING TO REGISTER SECTION
+createAccButton.addEventListener("click", (e)=>{
+    e.preventDefault();
+    window.location = "./register.html";
 })
 

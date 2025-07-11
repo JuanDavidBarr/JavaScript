@@ -84,4 +84,6 @@ registerButton.addEventListener("click", async (e)=>{
         "password": password
     }
     createUsers(URL_APP,newUser);
+    sessionStorage.setItem("authentication", "true");
+    window.location = "./landingPage.html";
 })
