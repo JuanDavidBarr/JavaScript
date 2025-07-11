@@ -1,0 +1,2 @@
+1. crear el index html, esta será la página donde se cargará el html de las secciones que conforman la SPA.
+2. crear las funciones que van a retornar el contenido de las diferentes páginas que conforman el SPA.
