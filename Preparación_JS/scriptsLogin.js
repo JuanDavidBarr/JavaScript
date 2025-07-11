@@ -40,6 +40,7 @@ loginButton.addEventListener("click", async (e) => {
     data.forEach(element => {
         if(emailName === element.name || emailName === element.email && password === element.password){
             sessionStorage.setItem("authentication", "true");
+            localStorage.setItem("userLogged", JSON.stringify(element.id));
             window.location = "./landingPage.html";
         } else if (!(emailName === element.name)) {
             const incorrectEmail = document.querySelector(".email-incorrect");

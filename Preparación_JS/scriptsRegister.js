@@ -38,8 +38,8 @@ async function createUsers(url,data1) {
 registerButton.addEventListener("click", async (e)=>{
     e.preventDefault();
     const data = await getUsers(URL_APP);
-    let isEmpty;
-    let isNotAvailable;
+    let isEmpty = false;
+    let isNotAvailable = false;
     //VALIDATING INPUTS ARE NOT EMPTY
     registerInputContent.forEach(element => {
         if(element.value.length === 0){
@@ -81,9 +81,13 @@ registerButton.addEventListener("click", async (e)=>{
     const newUser = {
         "name": username,
         "email": email,
-        "password": password
+        "password": password,
+        "role" : "visitor",
+        "cursos" : ""
     }
     createUsers(URL_APP,newUser);
+    const userLogged = data.find(element => element.name === newUser["name"]);
+    localStorage.setItem("userLogged", JSON.stringify(userLogged.id))
     sessionStorage.setItem("authentication", "true");
     window.location = "./landingPage.html";
 })

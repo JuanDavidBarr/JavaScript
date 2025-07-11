@@ -4,7 +4,27 @@
       "name": "Juan David Barrera Patiño",
       "email": "barrera.juanda7@gmail.com",
       "password": "password123",
+      "role": "admin",
       "id": "4g11"
+    },
+    {
+      "id": "370a",
+      "name": "Mario",
+      "email": "mario@gmail.com",
+      "password": "123",
+      "role": "visitor",
+      "cursos": ""
+    },
+    {
+      "id": "c2f9",
+      "name": "felipe",
+      "email": "felipe@gmail.com",
+      "password": "aa",
+      "role": "visitor",
+      "cursos": ""
     }
+  ],
+  "Courses": [
+    {}
   ]
 }
