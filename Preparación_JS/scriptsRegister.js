@@ -42,14 +42,22 @@ async function createUsers(url,data1) {
 }
 registerButton.addEventListener("click", async (e)=>{
     e.preventDefault();
+    const messages = document.querySelectorAll("[data-hidden]");
+    messages.forEach(element => {
+        if(element.dataset.hidden === "false"){
+            element.classList.add("is-hidden");
+            element.dataset.hidden = "true";
+        }
+    });
     const data = await getUsers(URL_APP);
+    let noAvaible = false;
     let isEmpty = false;
-    let isNotAvailable = false;
     //VALIDATING INPUTS ARE NOT EMPTY
     registerInputContent.forEach(element => {
         if(element.value.length === 0){
             const emptyMessage = document.querySelector(`.${element.name}`);
             emptyMessage.classList.remove("is-hidden");
+            emptyMessage.dataset.hidden = "false";
             isEmpty = true;
         }
     });
@@ -61,26 +69,44 @@ registerButton.addEventListener("click", async (e)=>{
     const password = registerInputContent[2].value;
     const confirmpassword = registerInputContent[3].value;
     //VALIDATING THERE IS NO USERNAME OR EMAIL REPEATED
-    data.forEach(element => {
-        if (username === element.name){
+    const serchUser = data.find(element => element.name === username || element.email === email);
+    if(serchUser){
+        if(serchUser.name === username){
             const unavailableMessage = document.querySelector(".username-unavailable");
             unavailableMessage.classList.remove("is-hidden");
-            isNotAvailable = true;
-            return;
-        } else if (email === element.email){
+            unavailableMessage.dataset.hidden = "false";
+            noAvaible = true;
+        } else if (serchUser.email === email){
             const unavailableMessage = document.querySelector(".email-unavailable");
             unavailableMessage.classList.remove("is-hidden");
-            isNotAvailable = true;
-            return;
+            unavailableMessage.dataset.hidden = "false";
+            noAvaible = true;
         }
-    });
-    if (isNotAvailable){
+    }
+    if(noAvaible){
         return;
     }
+    // data.forEach(element => {
+    //     if (username === element.name){
+    //         const unavailableMessage = document.querySelector(".username-unavailable");
+    //         unavailableMessage.classList.remove("is-hidden");
+    //         isNotAvailable = true;
+    //         return;
+    //     } else if (email === element.email){
+    //         const unavailableMessage = document.querySelector(".email-unavailable");
+    //         unavailableMessage.classList.remove("is-hidden");
+    //         isNotAvailable = true;
+    //         return;
+    //     }
+    // });
+    // if (isNotAvailable){
+    //     return;
+    // }
     //VALIDATING PASSWORD AND PASSWORDCONFIRMATION
     if(!(password === confirmpassword)){
         const noMatchMessage = document.querySelector(".no-match");
         noMatchMessage.classList.remove("is-hidden");
+        noMatchMessage.dataset.hidden = "false";
         return;
     }
     newUser = {

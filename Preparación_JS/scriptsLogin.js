@@ -33,7 +33,7 @@ loginButton.addEventListener("click", async (e) => {
         if(element.value.length === 0){
             const emptyMessage = document.querySelector(`.${element.name}`);
             emptyMessage.classList.remove("is-hidden");
-            emptyMessage.dataset.hidden = "false"
+            emptyMessage.dataset.hidden = "false";
             isEmpty = true;
         }
     })
