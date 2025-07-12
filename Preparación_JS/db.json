@@ -22,9 +22,19 @@
       "password": "aa",
       "role": "visitor",
       "cursos": ""
+    },
+    {
+      "id": "f88e",
+      "name": "julian",
+      "email": "julian@gmail.com",
+      "password": "aa",
+      "role": "visitor",
+      "cursos": ""
     }
   ],
   "Courses": [
-    {}
+    {
+      "id": "09d7"
+    }
   ]
 }

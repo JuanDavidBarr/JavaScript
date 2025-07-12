@@ -1,4 +1,4 @@
-const URL_APP = "http://localhost:3000/"
+const URL_APP = "http://localhost:3000/";
 const registerInputContent = Array.from(document.getElementsByClassName("input"));
 const registerButton = document.getElementById("register-button");
 //GET METHOD
@@ -30,6 +30,11 @@ async function createUsers(url,data1) {
         }
         const data = await response.json();
         console.log("User has been created");
+        //AUTHENTICATION AND BRINGS TO PRIVATE SESSION
+        const userLogged = data["id"];
+        localStorage.setItem("userLogged", JSON.stringify(userLogged));
+        sessionStorage.setItem("authentication", "true");
+        window.location = "./landingPage.html";
     }
     catch(error){
         console.error("Error when creating user:", error)
@@ -78,7 +83,7 @@ registerButton.addEventListener("click", async (e)=>{
         noMatchMessage.classList.remove("is-hidden");
         return;
     }
-    const newUser = {
+    newUser = {
         "name": username,
         "email": email,
         "password": password,
@@ -86,8 +91,5 @@ registerButton.addEventListener("click", async (e)=>{
         "cursos" : ""
     }
     createUsers(URL_APP,newUser);
-    const userLogged = data.find(element => element.name === newUser["name"]);
-    localStorage.setItem("userLogged", JSON.stringify(userLogged.id))
-    sessionStorage.setItem("authentication", "true");
-    window.location = "./landingPage.html";
 })
+
