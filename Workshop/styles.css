@@ -1,0 +1,18 @@
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+.aside-container{
+    height: 100%;
+}
+.aside{
+    display: flex;
+    flex-direction: column;
+}
+.main{
+    height: 100%;
+    display: flex;
+}
+.container{
+    width: 100%;
+}
