@@ -226,16 +226,12 @@ function usersRender (){
     window.location.hash = "#/users";
 }
 anclas.forEach(element => {
-    element.addEventListener("click",(e) =>{
-        e.preventDefault();
-        let path = e.target.getAttribute("href");
+    element.addEventListener("click",(event) =>{
+        event.preventDefault();
+        let path = event.target.getAttribute("href");
         router[path]();           
     })
 });
 
-
-
-// let path = e.target.getAttribute("href");
-//     router[path]();
 
 
