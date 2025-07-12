@@ -16,18 +16,24 @@ async function getUsers(url) {
         console.error("Error when getting information:", error);
     }
 }
-
 //AUTHENTICATION AND VALIDATION
 loginButton.addEventListener("click", async (e) => {
     e.preventDefault();
+    const messages = document.querySelectorAll("[data-hidden]");
+    messages.forEach(element => {
+        if(element.dataset.hidden === "false"){
+            element.classList.add("is-hidden");
+            element.dataset.hidden = "true";
+        }
+    });
     const data = await getUsers(URL_APP);
     let isEmpty;
-    let noMatch;
     //VALIDATING INPUTS ARE NOT EMPTY
     loginInputContent.forEach(element => {
         if(element.value.length === 0){
             const emptyMessage = document.querySelector(`.${element.name}`);
             emptyMessage.classList.remove("is-hidden");
+            emptyMessage.dataset.hidden = "false"
             isEmpty = true;
         }
     })
@@ -37,27 +43,22 @@ loginButton.addEventListener("click", async (e) => {
     const emailName = loginInputContent[0].value;
     const password = loginInputContent[1].value;
     //VALIDATING EMAIL/NAME AND PASSWORD
-    data.forEach(element => {
-        if(emailName === element.name || emailName === element.email && password === element.password){
-            sessionStorage.setItem("authentication", "true");
-            localStorage.setItem("userLogged", JSON.stringify(element.id));
-            window.location = "./landingPage.html";
-        } else if (!(emailName === element.name)) {
-            const incorrectEmail = document.querySelector(".email-incorrect");
-            incorrectEmail.classList.remove("is-hidden");
-            noMatch = true;
-        } else if (!(emailName === element.email)) {
-            const incorrectName = document.querySelector(".name-incorrect");
-            incorrectName.classList.remove("is-hidden");
-            noMatch = true;
-        } else if (!(password === element.password)) {
-            const incorrectPassword = document.querySelector(".password-incorrect");
-            incorrectPassword.classList.remove("is-hidden");
-            noMatch = true;
-        }
-    });
-    if (noMatch){
+    const serchUser = data.find(element => element.name === emailName || emailName === element.email);
+    console.log(serchUser);
+    if (!serchUser){
+        const incorrectUser = document.querySelector(".user-incorrect");
+        incorrectUser.classList.remove("is-hidden");
+        incorrectUser.dataset.hidden = "false";
         return;
+    } else if (serchUser.password !== password){
+        const incorrectPassword = document.querySelector(".password-incorrect");
+        incorrectPassword.classList.remove("is-hidden");
+        incorrectPassword.dataset.hidden = "false";
+        return;
+    } else {
+        sessionStorage.setItem("authentication", "true");
+        localStorage.setItem("userLogged", JSON.stringify(serchUser.id));
+        window.location = "./landingPage.html";
     }
 })
 //GOING TO REGISTER SECTION
