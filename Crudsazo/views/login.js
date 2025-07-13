@@ -67,7 +67,7 @@ export function afterRender(){
         }
         const emailName = loginInput[0].value;
         const password = loginInput[1].value;
-        const serchUser = data.find(element => element.name === emailName || emailName === element.email);
+        const serchUser = data.find(element => element.username === emailName || emailName === element.email);
         console.log(serchUser);
         if (!serchUser){
             const incorrectUser = document.querySelector(".user-incorrect");

@@ -131,7 +131,7 @@ export function afterRender(){
             return;
         }
         const newUser = {
-            "name": username,
+            "username": username,
             "email": email,
             "password": password,
             "role" : "visitor",
