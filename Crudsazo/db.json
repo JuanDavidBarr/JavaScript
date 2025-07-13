@@ -3,7 +3,9 @@
         {
             "username" : "Juan David Barrera",
             "email" : "barrera.juanda7@gmail.com",
+            "password" : "123",
             "role": "admin",
+            "id" : "45g9",
             "courses" : []
         }
     ]
