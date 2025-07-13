@@ -1,12 +1,36 @@
 {
-    "users" : [
-        {
-            "username" : "Juan David Barrera",
-            "email" : "barrera.juanda7@gmail.com",
-            "password" : "123",
-            "role": "admin",
-            "id" : "45g9",
-            "courses" : []
-        }
-    ]
+  "users": [
+    {
+      "username": "Juan David Barrera",
+      "email": "barrera.juanda7@gmail.com",
+      "password": "123",
+      "role": "admin",
+      "id": "45g9",
+      "courses": []
+    },
+    {
+      "id": "b7bc",
+      "name": "Mario",
+      "email": "mario@gmail.com",
+      "password": "1234",
+      "role": "visitor",
+      "cursos": ""
+    },
+    {
+      "id": "3ee3",
+      "name": "felipe",
+      "email": "felipe@gmail.com",
+      "password": "12345",
+      "role": "visitor",
+      "cursos": ""
+    },
+    {
+      "id": "60aa",
+      "name": "Carlos",
+      "email": "carlos@gmail.com",
+      "password": "123456",
+      "role": "visitor",
+      "cursos": ""
+    }
+  ]
 }

@@ -12,10 +12,11 @@ export async function renderRoute(hash, container) {
     const path = hash.slice(1) || '/';
     const load = routes[path];
     if(!load){
-    container.innerHTML = `<h2>Not founded</h2>`    
+    container.innerHTML = `<h2>Not founded</h2>`
+    return;    
     }
     const module = await load();
-    const html = module.render();
+    const html = await module.render();
     container.innerHTML = html;
     if (typeof module.afterRender === 'function'){
         module.afterRender();
