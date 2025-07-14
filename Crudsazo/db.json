@@ -14,7 +14,16 @@
       "email": "mario@gmail.com",
       "password": "1234",
       "role": "visitor",
-      "cursos": ""
+      "courses": [
+        {
+          "name": "Maths",
+          "code": "0001"
+        },
+        {
+          "name": "Physics",
+          "code": "0002"
+        }
+      ]
     },
     {
       "id": "3ee3",
@@ -22,7 +31,7 @@
       "email": "felipe@gmail.com",
       "password": "12345",
       "role": "visitor",
-      "cursos": ""
+      "courses": ""
     },
     {
       "id": "60aa",
@@ -30,7 +39,29 @@
       "email": "carlos@gmail.com",
       "password": "123456",
       "role": "visitor",
-      "cursos": ""
+      "courses": ""
+    }
+  ],
+  "courses": [
+    {
+      "name": "Maths",
+      "code": "0001"
+    },
+    {
+      "name": "Physics",
+      "code": "0002"
+    },
+    {
+      "name": "English",
+      "code": "0003"
+    },
+    {
+      "name": "Chemestry",
+      "code": "0004"
+    },
+    {
+      "name": "Arts",
+      "code": "0005"
     }
   ]
 }

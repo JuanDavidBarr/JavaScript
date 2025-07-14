@@ -41,16 +41,16 @@ export function afterRender(){
         const URL_db = "http://localhost:3000/";
         const container = document.getElementById("welcomeMessage");
         async function getUsers(url){
-        try{
-            const response = await fetch(url+"users");
-            if(!response.ok){
-                throw new Error ("Couldn't fetch resource")
-            }
-            const data = await response.json();
-            return data;
-        }catch(error){
-            console.error ("Error when getting information:". error);
-        }  
+            try{
+                const response = await fetch(url+"users");
+                if(!response.ok){
+                    throw new Error ("Couldn't fetch resource")
+                }
+                const data = await response.json();
+                return data;
+            }catch(error){
+                console.error ("Error when getting information:", error);
+            }  
         }
         async function renderUserInfo (){
             const data = await getUsers(URL_db);
