@@ -12,29 +12,39 @@
       "name": "Mario",
       "email": "mario@gmail.com",
       "password": "123",
-      "role": "visitor",
-      "cursos": ""
+      "role": "visitor"
     },
     {
       "id": "c2f9",
       "name": "felipe",
       "email": "felipe@gmail.com",
       "password": "aa",
-      "role": "visitor",
-      "cursos": ""
+      "role": "visitor"
     },
     {
       "id": "f88e",
       "name": "julian",
       "email": "julian@gmail.com",
       "password": "aa",
-      "role": "visitor",
-      "cursos": ""
-    }
-  ],
-  "Courses": [
+      "role": "visitor"
+    },
     {
-      "id": "09d7"
+      "id": "855b",
+      "name": "a",
+      "email": "b",
+      "password": "c"
+    },
+    {
+      "id": "327f",
+      "name": "d",
+      "email": "e",
+      "password": "f"
+    },
+    {
+      "id": "ca32",
+      "name": "g",
+      "email": "h",
+      "password": "i"
     }
   ]
 }
