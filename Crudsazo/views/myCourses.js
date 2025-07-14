@@ -115,7 +115,7 @@ export function afterRender() {
                         const user = dataUsers.find(element => element.id === JSON.parse(localStorage.getItem("userLogged")));
                         const newCourseList = user.courses.filter(element => element.name !== event.target.dataset.course);
                         try {
-                            const response = await fetch(URL_db + "users/b7bc", {
+                            const response = await fetch(URL_db +`users/${user.id}`, {
                                 method: "PATCH",
                                 headers: {
                                     "Content-Type": "application/json"
