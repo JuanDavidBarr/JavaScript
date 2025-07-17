@@ -22,7 +22,8 @@ export function render() {
                     <p class="help is-danger is-hidden password" data-hidden>All fields must be filled</p>
                 </div>
                 <div class="control">
-                    <button class="button is-primary" id="loginBtn">Login</button>
+                    <button class="button is-danger" id="loginBtn">Login</button>
+                    <button class="button is-link" id="createAccBtn">Create</button>
                 </div>
             </form>
         </section>
@@ -73,7 +74,7 @@ export function afterRender() {
             if (finalInput) {
                 if (finalInput.password === password) {
                     localStorage.setItem("userLogged", JSON.stringify(finalInput));
-                    //window.location = "#/landingPage"
+                    window.location = "#/"
                 } else {
                     const incorrectPassword = document.querySelector(".passwordIncorrect");
                     incorrectPassword.classList.remove("is-hidden");
@@ -93,5 +94,10 @@ export function afterRender() {
         if (noMatch) {
             return;
         }
+    })
+    const createAccBtn = document.getElementById("createAccBtn");
+    createAccBtn.addEventListener("click", (event) =>{
+        event.preventDefault();
+        window.location = '#/register';
     })
 }
