@@ -1,0 +1,7 @@
+.columns-container{
+    height: 40rem;
+}
+.img:hover{
+    border: 1px solid, white;
+    border-radius: 5%;
+}

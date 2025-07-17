@@ -20,5 +20,4 @@ export async function renderRoute(hash, app) {
     if(module.afterRender){
         module.afterRender();
     }
-
 }
