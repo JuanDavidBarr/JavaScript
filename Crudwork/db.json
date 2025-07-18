@@ -1,45 +1,65 @@
 {
-    "users" : [
-        {
-            "username" : "Juan David Barrera",
-            "email" : "barrera.juanda7@gmail.com",
-            "password" : "123",
-            "profile" : {
-                "experience" : [{
-                    "Position" : "Teacher",
-                    "Time" : "1 year",
-                    "Company" : "Blendex" 
-                }],
-                "habilities" : ["English", "French", "JavaScript (basic)", "HTML & CSS (basic)"] 
-            },
-            "cv" : "CV-Juan David"
-        }
-    ],
-    "companies" : [{
-        "name" : "Google",
-        "logo" : "logpicho",
-        "field" : "Technology",
-        "description" : "Fucking biggest serch engine yo"
+  "users": [
+    {
+      "username": "Juan David Barrera",
+      "email": "barrera.juanda7@gmail.com",
+      "password": "123",
+      "profile": {
+        "experience": [
+          {
+            "Position": "Teacher",
+            "Time": "1 year",
+            "Company": "Blendex"
+          }
+        ],
+        "habilities": [
+          "English",
+          "French",
+          "JavaScript (basic)",
+          "HTML & CSS (basic)"
+        ]
+      },
+      "cv": "CV-Juan David",
+      "id": "1952"
     }
-    ],
-    "offers" : [
-        {
-            "title" : "Software developper",
-            "description" : "You are going to make our gemini AI do all your job, don't worry",
-            "requirements" : ["cute", "funny", "At leat ELO gold", "No garen main", "Liverpool fan"],
-            "salary" : "Ask what you want bro, don't be shy",
-            "modality" : "Remote bro",
-            "candidate" : "Juan David Barrera (Big dog)",
-            "company" : "Google"
-        }
-    ],
-    "applications" : [
-        {
-            "user" : "Juan David Barrera",
-            "offer" : "Software developper",
-            "date" : "2025-07-16",
-            "status" : "pending",
-            "cv" : "CV-Juan David"
-        }
-    ]
+  ],
+  "companies": [
+    {
+      "name": "Google",
+      "email": "google@gmail.com",
+      "password": "123",
+      "logo": "logpicho",
+      "field": "Technology",
+      "description": "Fucking biggest serch engine yo",
+      "id": "3d40"
+    }
+  ],
+  "offers": [
+    {
+      "title": "Software developper",
+      "description": "You are going to make our gemini AI do all your job, don't worry",
+      "requirements": [
+        "cute",
+        "funny",
+        "At leat ELO gold",
+        "No garen main",
+        "Liverpool fan"
+      ],
+      "salary": "Ask what you want bro, don't be shy",
+      "modality": "Remote bro",
+      "candidate": "Juan David Barrera (Big dog)",
+      "company": "Google",
+      "id": "6ad6"
+    }
+  ],
+  "applications": [
+    {
+      "user": "Juan David Barrera",
+      "offer": "Software developper",
+      "date": "2025-07-16",
+      "status": "pending",
+      "cv": "CV-Juan David",
+      "id": "7500"
+    }
+  ]
 }

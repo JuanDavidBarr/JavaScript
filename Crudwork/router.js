@@ -1,7 +1,9 @@
 const router = {
     "/" : () => import ('./views/landingPage.js'),
-    "/login" : () => import ('./views/login.js'),
-    "/register" : () => import ('./views/register.js')
+    "/loginCandidates" : () => import ('./views/loginCandidates.js'),
+    "/loginCompanies" : () => import ('./views/loginCompanies.js'),
+    "/registerCandidates" : () => import ('./views/registerCandidates.js'),
+    "/registerCompanies" : () => import ('./views/registerCompanies.js')
 }
 
 export async function renderRoute(hash, app) {
