@@ -6,13 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrudWork</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-    <!-- <link rel="stylesheet" href="./assets/Css/login.css"> -->
+    <link rel="stylesheet" href="./assets/Css/test.css">
 </head>
 
 <body id="app">
+    <header class="container">
+        <nav class="navbar has-text-weight-bold has-text-link">
+            <div class="navbar-brand">
+                <h1 class="navbar-item is-italic has-text-weight-bold has-text-danger is-size-3">CrudWork</h1>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="#" class="navbar-item has-text-weight-medium has-text-link">Home</a>
+                    <a href="#" class="navbar-item has-text-weight-medium has-text-link">Logout</a>
+                    <a href="#" class="navbar-item has-text-weight-medium has-text-link">Profile</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="has-background-link">
+        <section class="container mt-6">
+            <div class="columns mb-4">
+                <div class="column">
+                    <div class="card">
+                        <header class="card-header">
+                          <p class="card-header-title">Title</p>
+                        </header>
+                        <div class="card-content">
+                          <div class="content">
+                            <p>Description</p>
+                            <p>Requierements</p>
+                            <p>Salary</p>
+                            <p>Modality</p>
+                            <p>Company</p>
+                          </div>
+                        </div>
+                        <footer class="card-footer">
+                          <a href="#" class="card-footer-item">Apply</a>
+                          <a href="#" class="card-footer-item">Ignore</a>
+                        </footer>
+                      </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
 
+            // Get all "navbar-burger" elements
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            console.log($navbarBurgers);
 
-    <script type="module" src="./views/main.js"></script>
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+
+                });
+            });
+        });
+        const URL_DB = "http://localhost:3000/";
+        // Gets offers 
+        async function getOffers() {
+            try {
+                const response = await fetch(URL_DB+"offers");
+                const offers = await response.json();
+                console.log(offers); 
+            } catch (error) {
+                console.error("Error when getting offers:", errors);
+            }
+        }
+        getOffers();
+    </script>
+    <!-- <script type="module" src="./views/main.js"></script> -->
 </body>
 
 </html>

@@ -3,42 +3,51 @@ export function render() {
     loadCss("Css/landingPage.css");
     
     return `
-        <header class="container">
-            <nav class="navbar  has-text-weight-bold has-text-link">
-                <div class="navbar-brand">
-                    <h1 class="navbar-item is-italic has-text-weight-bold has-text-danger is-size-3">CrudWork</h1>
-                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                        data-target="navbarBasicExample">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
+    <header class="container">
+        <nav class="navbar  has-text-weight-bold has-text-link">
+            <div class="navbar-brand">
+                <h1 class="navbar-item is-italic has-text-weight-bold has-text-danger is-size-3">CrudWork</h1>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="#" class="navbar-item has-text-weight-medium has-text-link">Home</a>
+                    <a href="#" class="navbar-item has-text-weight-medium has-text-link">Login</a>
+                    <a href="#" class="navbar-item has-text-weight-medium has-text-link">Register</a>
+                    <a href="#" class="navbar-item has-text-weight-medium has-text-link">Profile</a>
                 </div>
-                <div id="navbarBasicExample" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a href="#" class="navbar-item has-text-weight-medium has-text-link">Home</a>
-                        <a href="#" class="navbar-item has-text-weight-medium has-text-link">Login</a>
-                        <a href="#" class="navbar-item has-text-weight-medium has-text-link">Register</a>
-                        <a href="#" class="navbar-item has-text-weight-medium has-text-link">Profile</a>
-                    </div>
+            </div>
+        </nav>
+    </header>
+    <main class="columns-container is-clipped">
+        <section class="hero is-link is-fullheight-with-navbar">
+            <div class="hero-body columns">
+                <div class="column is-half is-flex is-flex-direction-column logoCard">
+                    <a class="is-align-self-center" href="#/loginCandidates"><img class="img p-3"
+                            src="./assets/Images/candidateLogo.svg" alt="Company Logo"></a>
+                    <h1 class="title has-text-centered mt-5">Candidates</h1></a>
                 </div>
-            </nav>
-        </header>
-        <main class="columns-container is-clipped">
-            <section class="hero is-link is-fullheight-with-navbar">
-                <div class="hero-body columns">
-                    <div class="column is-half is-flex is-flex-direction-column logoCard">
-                        <a class="is-align-self-center" href="#/loginCandidates"><img class="img p-3" src="./assets/Images/candidateLogo.svg" alt="Company Logo"></a>
-                        <h1 class="title has-text-centered mt-5">Candidates</h1></a>
-                    </div>
-                    <div class="column is-half is-flex is-flex-direction-column logoCard">
-                        <a class="is-align-self-center" href="#/loginCompanies"><img class="img p-3" src="./assets/Images/companyLogo.svg" alt="Company Logo"></a>
-                        <h1 class="title has-text-centered mt-5">Company</h1>
-                    </div>
+                <div class="column is-half is-flex is-flex-direction-column logoCard">
+                    <a class="is-align-self-center" href="#/loginCompanies"><img class="img p-3"
+                            src="./assets/Images/companyLogo.svg" alt="Company Logo"></a>
+                    <h1 class="title has-text-centered mt-5">Company</h1>
                 </div>
-            </section>
-        </main>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="content has-text-centered has-text-danger is-size-5">
+          <p>
+            <strong class="has-text-danger">CrudWork</strong> by Juan David Barrera Patiño.
+          </p>
+        </div>
+    </footer>
     `
 }
 
