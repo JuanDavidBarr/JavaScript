@@ -39,8 +39,8 @@
       "title": "Software developper",
       "description": "You are going to make our gemini AI do all your job, don't worry",
       "requirements": [
-        "cute",
-        "funny",
+        "Cute",
+        "Funny",
         "At leat ELO gold",
         "No garen main",
         "Liverpool fan"
@@ -60,6 +60,27 @@
       "status": "pending",
       "cv": "CV-Juan David",
       "id": "7500"
+    },
+    {
+      "id": "1572",
+      "user": "1952",
+      "offer": "6ad6",
+      "date": "18/6/2025",
+      "status": "pending"
+    },
+    {
+      "id": "e612",
+      "user": "1952",
+      "offer": "6ad6",
+      "date": "18/6/2025",
+      "status": "pending"
+    },
+    {
+      "id": "debc",
+      "user": "1952",
+      "offer": "6ad6",
+      "date": "18/6/2025",
+      "status": "pending"
     }
   ]
 }

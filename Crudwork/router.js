@@ -3,7 +3,8 @@
 //     "/loginCandidates" : () => import ('./views/loginCandidates.js'),
 //     "/loginCompanies" : () => import ('./views/loginCompanies.js'),
 //     "/registerCandidates" : () => import ('./views/registerCandidates.js'),
-//     "/registerCompanies" : () => import ('./views/registerCompanies.js')
+//     "/registerCompanies" : () => import ('./views/registerCompanies.js'),
+//      "/offers" : () => import ('./views/offers.js')
 // }
 
 // export async function renderRoute(hash, app) {

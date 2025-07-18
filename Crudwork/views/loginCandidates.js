@@ -74,7 +74,7 @@ export function afterRender() {
             if (finalInput) {
                 if (finalInput.password === password) {
                     localStorage.setItem("userLogged", JSON.stringify(finalInput));
-                    window.location = "#/"
+                    window.location = "#/offers"
                 } else {
                     const incorrectPassword = document.querySelector(".passwordIncorrect");
                     incorrectPassword.classList.remove("is-hidden");
